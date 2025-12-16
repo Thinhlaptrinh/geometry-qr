@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thông tin hình học</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; padding: 20px; }
+    .card { background: #fff; border-radius: 16px; padding: 20px; max-width: 600px; margin: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    h1 { text-align: center; }
+    h2 { color: #2c3e50; }
+    .formula { background: #eef2ff; padding: 10px; border-radius: 10px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <div class="card" id="content"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const shape = params.get('shape');
+    const content = document.getElementById('content');
+
+    if (shape === 'cau') {
+      content.innerHTML = `
+        <h1>Hình cầu</h1>
+        <h2>Định nghĩa</h2>
+        <p>Hình cầu là hình không gian được tạo bởi các điểm cách đều một điểm cố định (tâm) một khoảng không đổi (bán kính).</p>
+        <h2>Công thức</h2>
+        <div class="formula">Diện tích: S = 4πR²</div>
+        <div class="formula">Thể tích: V = 4/3 πR³</div>
+      `;
+    } else if (shape === 'tru') {
+      content.innerHTML = `
+        <h1>Hình trụ</h1>
+        <h2>Định nghĩa</h2>
+        <p>Hình trụ là hình không gian có hai đáy là hai hình tròn bằng nhau và song song.</p>
+        <h2>Công thức</h2>
+        <div class="formula">Chu vi đáy: C = 2πR</div>
+        <div class="formula">Diện tích xung quanh: Sxq = 2πRh</div>
+        <div class="formula">Diện tích toàn phần: Stp = 2πRh + 2πR²</div>
+        <div class="formula">Thể tích: V = πR²h</div>
+      `;
+    } else {
+      content.innerHTML = `
+        <h1>Trang thông tin hình học</h1>
+        <p>Hãy quét mã QR để xem thông tin chi tiết về từng hình.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
