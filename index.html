@@ -6,46 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; padding: 20px; }
-    .card { background: #fff; border-radius: 16px; padding: 20px; max-width: 600px; margin: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    h1 { text-align: center; }
+    .container { max-width: 800px; margin: auto; }
+    .card { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 30px; }
     h2 { color: #2c3e50; }
     .formula { background: #eef2ff; padding: 10px; border-radius: 10px; margin: 8px 0; }
   </style>
 </head>
 <body>
-  <div class="card" id="content"></div>
+  <div class="container">
+    <h1>📐 Thông tin các hình khối</h1>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const shape = params.get('shape');
-    const content = document.getElementById('content');
+    <!-- HÌNH CẦU -->
+    <div class="card">
+      <h2>🔵 Hình cầu</h2>
+      <p><b>Định nghĩa:</b> Hình cầu là hình không gian gồm các điểm cách đều một điểm cố định (tâm) một khoảng không đổi (bán kính R).</p>
+      <h3>Công thức</h3>
+      <div class="formula">Diện tích mặt cầu: <b>S = 4πR²</b></div>
+      <div class="formula">Thể tích hình cầu: <b>V = 4/3 πR³</b></div>
+    </div>
 
-    if (shape === 'cau') {
-      content.innerHTML = `
-        <h1>Hình cầu</h1>
-        <h2>Định nghĩa</h2>
-        <p>Hình cầu là hình không gian được tạo bởi các điểm cách đều một điểm cố định (tâm) một khoảng không đổi (bán kính).</p>
-        <h2>Công thức</h2>
-        <div class="formula">Diện tích: S = 4πR²</div>
-        <div class="formula">Thể tích: V = 4/3 πR³</div>
-      `;
-    } else if (shape === 'tru') {
-      content.innerHTML = `
-        <h1>Hình trụ</h1>
-        <h2>Định nghĩa</h2>
-        <p>Hình trụ là hình không gian có hai đáy là hai hình tròn bằng nhau và song song.</p>
-        <h2>Công thức</h2>
-        <div class="formula">Chu vi đáy: C = 2πR</div>
-        <div class="formula">Diện tích xung quanh: Sxq = 2πRh</div>
-        <div class="formula">Diện tích toàn phần: Stp = 2πRh + 2πR²</div>
-        <div class="formula">Thể tích: V = πR²h</div>
-      `;
-    } else {
-      content.innerHTML = `
-        <h1>Trang thông tin hình học</h1>
-        <p>Hãy quét mã QR để xem thông tin chi tiết về từng hình.</p>
-      `;
-    }
-  </script>
+    <!-- HÌNH TRỤ -->
+    <div class="card">
+      <h2>🟢 Hình trụ</h2>
+      <p><b>Định nghĩa:</b> Hình trụ là hình không gian có hai đáy là hai hình tròn bằng nhau và song song, chiều cao là h.</p>
+      <h3>Công thức</h3>
+      <div class="formula">Chu vi đáy: <b>C = 2πR</b></div>
+      <div class="formula">Diện tích xung quanh: <b>S<sub>xq</sub> = 2πRh</b></div>
+      <div class="formula">Diện tích toàn phần: <b>S<sub>tp</sub> = 2πRh + 2πR²</b></div>
+      <div class="formula">Thể tích hình trụ: <b>V = πR²h</b></div>
+    </div>
+  </div>
 </body>
 </html>
